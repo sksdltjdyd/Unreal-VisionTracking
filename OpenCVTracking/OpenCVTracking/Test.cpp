@@ -9,7 +9,7 @@ using namespace std;
 ///////// Images ////////
 
 void main() {
-	string path = "C:/Users/User\Documents/Git/Unreal-VisionTracking/Resources/Image1.jpg";
+	string path = "C:/Users/User/Documents/Git/Unreal-VisionTracking/Resources/Image1.jpg";
 	Mat img = imread(path);
 	imshow("Image", img);
 	waitKey(0);
