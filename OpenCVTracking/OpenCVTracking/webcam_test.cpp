@@ -19,8 +19,8 @@ int main() {
     }
 
     // 웹캠 설정
-    cap.set(cv::CAP_PROP_FRAME_WIDTH, 1280);
-    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 720);
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 1920);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 1080);
     cap.set(cv::CAP_PROP_FPS, 30);
 
     // 실제 설정값 확인
