@@ -103,8 +103,6 @@ public:
             cv::Scalar(0, 255, 0)));
         colorRanges.push_back(ColorRange("Yellow", 20, 40, 100, 255, 100, 255,
             cv::Scalar(0, 255, 255)));
-        colorRanges.push_back(ColorRange("Orange", 10, 20, 100, 255, 100, 255,
-            cv::Scalar(0, 165, 255)));
     }
 
     void createTrackbars() {
