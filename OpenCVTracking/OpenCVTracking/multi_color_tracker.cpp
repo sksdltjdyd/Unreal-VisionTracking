@@ -1,5 +1,4 @@
 // multi_color_tracker_with_trackbar.cpp
-// HSV 조절바가 포함된 멀티 컬러 트래커
 
 #include <opencv2/opencv.hpp>
 #include <iostream>
