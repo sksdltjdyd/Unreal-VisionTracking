@@ -239,7 +239,7 @@ int main() {
     cv::createTrackbar("V High", "Controls", nullptr, 255, on_trackbar);
 
     // 초기값 설정 (주황색)
-    cv::setTrackbarPos("H Low", "Controls", 5);
+    cv::setTrackbarPos("H Low", "Controls", 20);
     cv::setTrackbarPos("H High", "Controls", 25);
     cv::setTrackbarPos("S Low", "Controls", 100);
     cv::setTrackbarPos("S High", "Controls", 255);
