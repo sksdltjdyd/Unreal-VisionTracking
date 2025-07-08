@@ -522,7 +522,7 @@ public:
         if (!contours.empty()) {
             double maxArea = 0;
             int maxIdx = -1;
-
+            
             for (int i = 0; i < contours.size(); i++) {
                 double area = cv::contourArea(contours[i]);
                 if (area > maxArea && area > 500) {
