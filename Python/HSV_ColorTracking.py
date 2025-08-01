@@ -61,7 +61,7 @@ def create_color_mask(hsv_image, color_name):
     
     return mask
 
-# 사용자가 추적할 색상을 선택할 수 있게 합니다
+# 사용자가 추적할 색상을 선택
 print("추적할 색상을 선택하세요:")
 print("사용 가능한 색상:", list(COLOR_RANGES.keys()))
 selected_color = input("색상 이름을 입력하세요 (기본값: blue): ").lower()
