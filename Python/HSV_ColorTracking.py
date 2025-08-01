@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 from pythonosc import udp_client
 
-# 각 색상의 HSV 범위를 정의합니다
-# 이 값들은 실험을 통해 찾은 일반적인 값이에요. 조명에 따라 조정이 필요할 수 있습니다.
+# 각 색상의 HSV 범위를 정의
+# 조명에 따라 조정이 필요
 COLOR_RANGES = {
     'red': {
         'lower': [(0, 120, 70), (170, 120, 70)],  # 빨간색은 0도와 180도 근처에 있어서 두 범위 필요
