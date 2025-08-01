@@ -40,7 +40,7 @@ COLOR_RANGES = {
 def create_color_mask(hsv_image, color_name):
     """
     특정 색상에 대한 마스크를 생성하는 함수
-    여러 범위를 가진 색상(예: 빨간색)도 처리할 수 있습니다
+    여러 범위를 가진 색상(예: 빨간색)도 처리할 수 있습니다ㄹ
     """
     color_info = COLOR_RANGES[color_name]
     mask = None
