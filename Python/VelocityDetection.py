@@ -37,7 +37,7 @@ class ColorMotionTracker:
         
     def update(self, position=None, timestamp=None):
         """
-        새로운 위치로 상태를 업데이트합니다
+        새로운 위치로 상태를 업데이트
         position이 None이면 객체가 감지되지 않은 것으로 처리
         """
         if timestamp is None:
@@ -81,7 +81,7 @@ class ColorMotionTracker:
                 self.current_speed *= decay_factor
     
     def _calculate_velocity(self):
-        """속도를 계산합니다"""
+        """속도를 계산"""
         if len(self.position_history) < 2:
             return
         
@@ -109,7 +109,7 @@ class ColorMotionTracker:
             self.current_speed = math.sqrt(self.current_velocity[0]**2 + self.current_velocity[1]**2)
     
     def _calculate_acceleration(self):
-        """가속도를 계산합니다"""
+        """가속도를 계산"""
         if len(self.position_history) < 3:
             return
         
@@ -126,7 +126,7 @@ class ColorMotionTracker:
             self.current_acceleration = (ax, ay)
     
     def get_direction_angle(self):
-        """움직임 방향을 각도로 반환합니다 (0-360도)"""
+        """움직임 방향을 각도로 반환 (0-360도)"""
         if self.current_speed < 10:  # 거의 정지 상태
             return None
         
@@ -136,7 +136,7 @@ class ColorMotionTracker:
         return (angle + 360) % 360
     
     def get_motion_state(self):
-        """현재 움직임 상태를 문자열로 반환합니다"""
+        """현재 움직임 상태를 문자열로 반환"""
         if not self.is_detected:
             return "Lost"
         elif self.current_speed < 50:
@@ -171,7 +171,7 @@ class MultiColorMotionTracker:
         
     def process_frame(self, frame):
         """
-        프레임을 처리하고 모든 색상을 추적합니다
+        프레임을 처리하고 모든 색상을 추적
         """
         # 전처리 (한 번만 수행)
         blurred = cv2.GaussianBlur(frame, (11, 11), 0)
@@ -223,7 +223,7 @@ class MultiColorMotionTracker:
         return display
     
     def _create_color_mask(self, hsv_image, color_name):
-        """특정 색상에 대한 마스크를 생성합니다"""
+        """특정 색상에 대한 마스크를 생성"""
         color_info = self.colors_config[color_name]
         mask = None
         
@@ -245,7 +245,7 @@ class MultiColorMotionTracker:
         return mask
     
     def _send_osc_data(self, color_name, tracker):
-        """추적 데이터를 OSC로 전송합니다"""
+        """추적 데이터를 OSC로 전송"""
         if tracker.is_detected and tracker.current_position:
             # 위치 (정규화된 좌표)
             norm_x = tracker.current_position[0] / 640  # 카메라 해상도에 맞게 조정
@@ -270,7 +270,7 @@ class MultiColorMotionTracker:
             self.osc_client.send_message(f"/tracking/{color_name}/state", [state])
     
     def _visualize_tracker(self, image, tracker):
-        """각 추적기의 상태를 시각화합니다"""
+        """각 추적기의 상태를 시각화"""
         if not tracker.is_detected:
             return
         
@@ -313,7 +313,7 @@ class MultiColorMotionTracker:
     
     def _analyze_interactions(self, image):
         """
-        여러 객체 간의 상호작용을 분석합니다
+        여러 객체 간의 상호작용을 분석
         예: 거리, 상대 속도, 충돌 예측 등
         """
         active_trackers = [(name, t) for name, t in self.trackers.items() if t.is_detected]
@@ -355,7 +355,7 @@ class MultiColorMotionTracker:
                         )
     
     def _draw_status_panel(self, image):
-        """상태 패널을 그립니다"""
+        """상태 패널을 전사"""
         # 반투명 배경
         overlay = image.copy()
         cv2.rectangle(overlay, (10, 10), (250, 150), (0, 0, 0), -1)
